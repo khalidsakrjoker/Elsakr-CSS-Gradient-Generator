@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elsakr CSS Gradient Generator | Free Online Tool</title>
+    <meta name="description"
+        content="Create beautiful CSS gradients with live preview. Linear, radial, and conic gradients. Copy CSS, Tailwind, or SCSS code instantly.">
+    <meta name="keywords"
+        content="css gradient generator, gradient maker, tailwind gradient, linear gradient, radial gradient, conic gradient, free tool">
+    <meta name="author" content="Elsakr">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Elsakr CSS Gradient Generator | Free Online Tool">
+    <meta property="og:description" content="Create beautiful CSS gradients with live preview.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://khalidsakrjoker.github.io/Elsakr-CSS-Gradient-Generator/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0a0a0f',
+                            card: '#12121a',
+                            'card-hover': '#1a1a25',
+                            input: '#1e1e2e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        /* Color Picker */
+        input[type="color"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+        }
+
+        /* Range Slider */
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: #334155;
+            border-radius: 3px;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Gradient Preview */
+        .gradient-preview {
+            transition: all 0.3s ease;
+        }
+
+        /* Color Stop */
+        .color-stop {
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Code Block */
+        .code-block {
+            font-family: 'Fira Code', 'Consolas', monospace;
+        }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-dark-bg text-white min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-screen flex flex-col">
+
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row justify-between items-center gap-4 pb-6 border-b border-slate-800">
+            <div class="flex items-center gap-4">
+                <img src="assets/logo.png" alt="Elsakr" class="w-12 h-12 object-contain">
+                <div class="text-center sm:text-left">
+                    <h1
+                        class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                        CSS Gradient Generator
+                    </h1>
+                    <span class="text-xs text-slate-500">Create beautiful gradients instantly</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span
+                    class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-xs font-semibold text-emerald-400">
+                    Free Tool
+                </span>
+                <a href="https://github.com/khalidsakrjoker/Elsakr-CSS-Gradient-Generator" target="_blank"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-dark-card text-slate-400 hover:bg-dark-card-hover hover:text-white transition-all">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Left: Controls -->
+                <div class="space-y-6">
+
+                    <!-- Gradient Type -->
+                    <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                        <label class="text-sm text-slate-400 mb-3 block">Gradient Type</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button
+                                class="gradient-type-btn active px-4 py-2.5 rounded-lg text-sm font-medium transition-all bg-blue-500 text-white"
+                                data-type="linear">
+                                Linear
+                            </button>
+                            <button
+                                class="gradient-type-btn px-4 py-2.5 rounded-lg text-sm font-medium transition-all bg-dark-input text-slate-400 hover:bg-dark-card-hover"
+                                data-type="radial">
+                                Radial
+                            </button>
+                            <button
+                                class="gradient-type-btn px-4 py-2.5 rounded-lg text-sm font-medium transition-all bg-dark-input text-slate-400 hover:bg-dark-card-hover"
+                                data-type="conic">
+                                Conic
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Angle (for linear) -->
+                    <div id="angleControl" class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="text-sm text-slate-400">Angle</label>
+                            <span id="angleValue" class="text-sm font-bold text-blue-400">90°</span>
+                        </div>
+                        <input type="range" id="angleSlider" min="0" max="360" value="90">
+                    </div>
+
+                    <!-- Color Stops -->
+                    <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                        <div class="flex justify-between items-center mb-4">
+                            <label class="text-sm text-slate-400">Color Stops</label>
+                            <button id="addColorBtn"
+                                class="px-3 py-1.5 bg-blue-500 text-white text-xs font-medium rounded-lg hover:bg-blue-600 transition-all flex items-center gap-1">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                Add Color
+                            </button>
+                        </div>
+                        <div id="colorStops" class="space-y-3">
+                            <!-- Color stops will be added here by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Presets -->
+                    <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                        <label class="text-sm text-slate-400 mb-3 block">Presets</label>
+                        <div id="presets" class="grid grid-cols-5 gap-2">
+                            <!-- Presets will be added here by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Preview & Code -->
+                <div class="space-y-6">
+
+                    <!-- Preview -->
+                    <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                        <label class="text-sm text-slate-400 mb-3 block">Preview</label>
+                        <div id="gradientPreview"
+                            class="gradient-preview w-full h-64 rounded-xl border border-white/10"></div>
+                    </div>
+
+                    <!-- Code Output -->
+                    <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                        <div class="flex items-center gap-2 mb-4">
+                            <button
+                                class="code-tab-btn active px-3 py-1.5 rounded-lg text-xs font-medium bg-blue-500 text-white"
+                                data-format="css">CSS</button>
+                            <button
+                                class="code-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-dark-input text-slate-400 hover:bg-dark-card-hover"
+                                data-format="tailwind">Tailwind</button>
+                            <button
+                                class="code-tab-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-dark-input text-slate-400 hover:bg-dark-card-hover"
+                                data-format="scss">SCSS</button>
+                        </div>
+                        <div class="relative">
+                            <pre id="codeOutput"
+                                class="code-block bg-dark-input rounded-lg p-4 text-sm text-slate-300 overflow-x-auto border border-white/5"></pre>
+                            <button id="copyBtn"
+                                class="absolute top-3 right-3 px-3 py-1.5 bg-blue-500 text-white text-xs font-medium rounded-lg hover:bg-blue-600 transition-all flex items-center gap-1">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="flex gap-3">
+                        <button id="randomBtn"
+                            class="flex-1 px-4 py-3 bg-dark-card border border-slate-800 text-slate-300 rounded-xl text-sm font-medium hover:border-blue-500 hover:text-blue-400 transition-all flex items-center justify-center gap-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                <polyline points="7.5 4.21 12 6.81 16.5 4.21" />
+                                <polyline points="7.5 19.79 7.5 14.6 3 12" />
+                                <polyline points="21 12 16.5 14.6 16.5 19.79" />
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                <line x1="12" y1="22.08" x2="12" y2="12" />
+                            </svg>
+                            Random
+                        </button>
+                        <button id="resetBtn"
+                            class="flex-1 px-4 py-3 bg-dark-card border border-slate-800 text-slate-300 rounded-xl text-sm font-medium hover:border-red-500 hover:text-red-400 transition-all flex items-center justify-center gap-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                            </svg>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="pt-8 pb-4 border-t border-slate-800 text-center">
+            <p class="text-sm text-slate-500">Made with ❤️ by <a href="https://elsakr.company" target="_blank"
+                    class="text-blue-400 hover:underline">Elsakr</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
